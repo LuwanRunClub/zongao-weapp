@@ -350,7 +350,7 @@ const locales = {
   '报名资料': 'Participants',
   '联系我们': 'Contact us',
   '帮助中心': 'Help center',
-  '关于XTERRA': 'About us',
+  '关于我们': 'About us',
   '个人资料': 'Profile',
   '加载中……': 'Loading',
   '现在点赞': 'Like',

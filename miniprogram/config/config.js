@@ -1,9 +1,9 @@
 const config = {
-  env: 'xterra-c2969f',
-  appId: 'wx491fb14c7948a753',
+  env: 'zhongao-2gmar3weeb4e1ffc',
+  appId: 'wx40ed28a90a609dd9',
   version: 2,
-  appTitle: 'XTERRA',
-  appDescription: 'XTERRA官方小程序',
+  appTitle: '众奥赛事',
+  appDescription: '众奥赛事小程序',
   mapKey: 'YOWBZ-MK263-F7G3H-YWGGY-RGHKQ-ACFNH',
   mapSig: 'aKlxXOLwqBO164rcHbHEr95YyWg2R7',
   storageKey: {

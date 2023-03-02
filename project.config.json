@@ -45,8 +45,8 @@
     "useStaticServer": true,
     "lazyloadPlaceholderEnable": false
   },
-  "appid": "wx491fb14c7948a753",
-  "projectname": "XTERRA",
+  "appid": "wx40ed28a90a609dd9",
+  "projectname": "众奥赛事",
   "libVersion": "2.17.0",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},

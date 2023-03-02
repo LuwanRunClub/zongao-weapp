@@ -1,8 +1,8 @@
 <view class="container">
-  <view class="header" style="height:{{headerBarHeight}}px;">
+  <!-- <view class="header" style="height:{{headerBarHeight}}px;">
     <image mode="heightFix" src="./../../images/tabs/logo-dark.png"></image>
-  </view>
-  <view class="swiper" style="margin-top:{{headerBarHeight}}px;">
+  </view> -->
+  <view class="swiper">  <!--style="margin-top:{{headerBarHeight}}px;"> -->
     <swiper class="{{banners.length === 1 ? 'disabled' : ''}}" bindchange="swiperChange" indicator-dots="{{false}}" autoplay="{{true}}">
       <block wx:for="{{banners}}" wx:key="_id">
         <swiper-item>
@@ -31,7 +31,7 @@
     <text class="cn">{{currentCity.cityCN}}</text>
     <view class="desc flex column align-center">
       <text user-select="{{true}}">{{isChinese ? currentCity.desc : currentCity.descEn}}</text>
-      <text user-select="{{true}}">{{_t['拥有打卡点：']}} {{places.length}}</text>
+      <text user-select="{{true}}" wx:if="{{places.length}}">{{_t['拥有打卡点：']}} {{places.length}}</text>
     </view>
     <button bindtap="redirect" data-url="/pages/venue/city/city" class="button">
       {{_t['切换城市']}}

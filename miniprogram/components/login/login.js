@@ -49,14 +49,12 @@ Component({
         title: '登录中',
       })
       //需要用户同意授权获取自身相关信息
-      debugger;
       if (e.detail.errMsg == "getUserInfo:ok") {
         this.callGetUserInfo(e.detail.userInfo);
       } else
         console.log("未授权")
     },
     callGetUserInfo(userInfo) {
-      debugger;
       var _this = this
       //将授权结果写入app.js全局变量
       app.globalData.auth['scope.userInfo'] = true

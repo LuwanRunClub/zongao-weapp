@@ -257,7 +257,7 @@ Page({
   onShareAppMessage: function () {
     const { type } = this.data;
     return {
-      title: "XTERRA",
+      title: "众奥赛事",
       imageUrl: "",
       path: `/pages/events/events?type=${type}`,
     };

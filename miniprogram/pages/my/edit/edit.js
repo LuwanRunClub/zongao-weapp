@@ -51,7 +51,6 @@ Page({
 
   onChange(e){
     const { type } = e.dataset;
-    debugger;
     this.setData({
       [type]: e.detail.value
     });
@@ -130,7 +129,6 @@ Page({
       })
       return;
     }
-    debugger;
     const db = wx.cloud.database();
     const result = await db.collection("userlist").doc(userId).update({
       data: {

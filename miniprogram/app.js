@@ -73,6 +73,7 @@ App({
       },
       currentCity: "上海",
     };
+    this.initDeviceInfo();
 
     const res = wx.getAccountInfoSync().miniProgram;
     const { envVersion } = res;
@@ -89,8 +90,6 @@ App({
       const res = await this.checkLogin();
       console.log(res);
     }
-
-    this.initDeviceInfo();
   },
 
   initDeviceInfo() {
@@ -104,12 +103,12 @@ App({
         const winHeight = clientHeight * changeHeight;
         that.globalData.winHeight = winHeight;
 
-        let info = wx.getMenuButtonBoundingClientRect();
-        let headerBarHeight = info.bottom + info.top - res.statusBarHeight;
+        const barHeight = res['system'].indexOf('Android') > 0 ? 48 : 44;
+        let headerBarHeight = barHeight + res.statusBarHeight;
         that.globalData.headerBarHeight = headerBarHeight;
 
         let isChinese = wx.getStorageSync(config.storageKey.isChinese);
-        if (isChinese === "") {
+        if (!isChinese) {
           isChinese = res.language === "zh_CN";
           wx.setStorageSync(config.storageKey.isChinese, isChinese);
         }

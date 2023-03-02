@@ -33,7 +33,7 @@ XTERRA官方小程序，主要功能:
 	- 我的发贴列表
 	- [x] 修改个人信息
 	- [x] 帮助中心
-	- [x] 关于XTERRA
+	- [x] 关于我们
 * 社区	
   - 社区首页
 	- 打卡
@@ -69,7 +69,7 @@ XTERRA官方小程序，主要功能:
 ## 介绍
 
 ## 链接
-https://xterra-c2969f-1258173660.tcloudbaseapp.com/index.html#/login
+https://zhongao-2gmar3weeb4e1ffc-1258634640.tcloudbaseapp.com/wx-cms/
 [CMS](https://xterra-c2969f-1258173660.tcloudbaseapp.com)
 xterra/xterra2020
 

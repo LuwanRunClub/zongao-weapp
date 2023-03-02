@@ -17,7 +17,6 @@ exports.main = async (event, context) => {
   const res = await userTable.where({ nickname: _.or(_.eq('微信用户'),_.eq(null))}).limit(1000).get();
   res.data.forEach(async item=>{
     const data = await regTable.where({ relation:'本人', userId: item._id }).get();
-    debugger;
     console.log(data);
   });
   return {
