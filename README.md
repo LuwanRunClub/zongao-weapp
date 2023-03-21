@@ -71,7 +71,7 @@ XTERRA官方小程序，主要功能:
 ## 链接
 https://zhongao-2gmar3weeb4e1ffc-1258634640.tcloudbaseapp.com/wx-cms/
 [CMS](https://xterra-c2969f-1258173660.tcloudbaseapp.com)
-xterra/xterra2020
+admin/1qaz2wsx
 
 12-14
 姓、名

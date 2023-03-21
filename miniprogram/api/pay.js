@@ -46,6 +46,10 @@ export const payNow = function(detail, callback) {
     fail(res) {
       console.log("云函数payment提交失败：", res)
       logManager.error('pay', res);
+      wx.showToast({
+        title: '支付失败',
+        icon: 'error'
+      });
     }
   })
 }

@@ -28,6 +28,7 @@ Component({
       })
     },
     tapItem(e){
+      debugger;
       let { src, type, url, bannerid } = e.currentTarget.dataset;
       const { list } = this.properties;
       const urls = list.map(item=>item.picUrl);
@@ -50,6 +51,7 @@ Component({
           if(url && !url.startsWith('/')){
             url = '/' + url;
           }
+          debugger
           wx.navigateTo({
             url,
           });

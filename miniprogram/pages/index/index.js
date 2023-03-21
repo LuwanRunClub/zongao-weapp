@@ -66,6 +66,7 @@ Page({
     });
   },
   tap(e) {
+    debugger;
     let { src, type, url, bannerid } = e.currentTarget.dataset;
     const { banners } = this.data;
     const urls = banners.map((item) => item.picUrl);
@@ -92,6 +93,7 @@ Page({
           });
           return;
         }
+        debugger;
         wx.navigateTo({
           url,
         });
@@ -304,7 +306,7 @@ Page({
         headerBarHeight: app.globalData.headerBarHeight,
       },
       () => {
-        this.loadFont();
+        //this.loadFont();
       }
     );
   },

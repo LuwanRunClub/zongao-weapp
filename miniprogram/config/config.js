@@ -4,7 +4,7 @@ const config = {
   version: 2,
   appTitle: '众奥赛事',
   appDescription: '众奥赛事小程序',
-  mapKey: 'YOWBZ-MK263-F7G3H-YWGGY-RGHKQ-ACFNH',
+  mapKey: 'SRKBZ-ZZVO2-P34UD-CWJHY-YQFQV-NLFXB',
   mapSig: 'aKlxXOLwqBO164rcHbHEr95YyWg2R7',
   storageKey: {
     kits: 'xterra.kits',
