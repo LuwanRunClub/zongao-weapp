@@ -1,9 +1,9 @@
 <view class="city flex align-center column">
-  <view class="header flex column align-center">
+  <!-- <view class="header flex column align-center">
     <text class="title impact">X-Discovery</text>
     <text class="info">{{_t['XTERRA推出的户外体验活动，精选全球最好玩的地方']}}</text>
     <view class="line"></view>
-  </view>
+  </view> -->
   <view class="list">
     <view bindtap="select" wx:for="{{list}}" data-name="{{item.cityCN}}" data-id="{{item._id}}" wx:key="_id" class="item flex">
       <view class="flex-none image">

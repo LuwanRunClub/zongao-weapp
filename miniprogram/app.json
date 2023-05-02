@@ -176,5 +176,10 @@
   "requiredPrivateInfos": [
     "chooseAddress"
   ],
-  "plugins": {}
+  "plugins": {
+    "player": {
+      "version": "2.1.15",
+      "provider": "wxa75efa648b60994b"
+    }
+  }
 }

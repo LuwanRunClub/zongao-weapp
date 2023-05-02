@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "backgroundColor": "#F5F5F5",
+  "usingComponents": {
+    "player-component": "plugin://player/video"
+  }
 }

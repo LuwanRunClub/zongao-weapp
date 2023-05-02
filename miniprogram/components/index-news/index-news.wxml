@@ -1,17 +1,23 @@
-
-  <view class="news" wx:if="{{news.length}}">
-      <view class="title">{{_t['新闻动态']}}</view>
+<view class="news" wx:if="{{news.length}}">
+  <!-- <view class="title">{{_t['新闻动态']}}</view>
       <view bindtap="redirect" data-wechaturl="{{news[0].wechatUrl}}"
         data-url="/pages/news/detail/detail?id={{news[0]._id}}" class="cover item">
         <image src="{{news[0].coverUrl}}" mode="aspectFill" />
         <view class="desc overflow-2">{{news[0].title}}</view>
+      </view> -->
+  <view class="list">
+    <view bindtap="redirect" data-wechaturl="{{item.wechatUrl}}" data-url="/pages/news/detail/detail?id={{item._id}}" class="item" wx:for="{{news}}" wx:key="_id">
+      <view class="item_text">
+        <view class="title overflow-2">{{item.title}}</view>
+        <!-- <view class="summary overflow-2">{{item.summary}}</view> -->
+        <view class="desc overflow-2">{{item.formatDate}}</view>
       </view>
-      <view class="list">
-        <view bindtap="redirect" data-wechaturl="{{item.wechatUrl}}"
-          data-url="/pages/news/detail/detail?id={{item._id}}" class="item" wx:for="{{news}}" wx:if="{{index>0}}"
-          wx:key="_id">
-          <image src="{{item.coverUrl}}" mode="aspectFill"></image>
-          <view class="desc overflow-2">{{item.title}}</view>
-        </view>
+      <view class="item_img">
+        <image src="{{item.coverUrl}}" mode="aspectFill"></image>
       </view>
+    </view>
   </view>
+  <navigator class="more" url="/pages/news/news">
+    查看更多
+  </navigator>
+</view>

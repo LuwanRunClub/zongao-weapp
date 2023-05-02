@@ -1,15 +1,9 @@
 
-.news {
-	padding: 30rpx;
-}
-
 .news .title {
-	font-size: 35rpx;
 	color: #313030;
 	letter-spacing: 4rpx;
-	font-weight: bold;
-	text-align: center;
-	padding: 45rpx;
+  font-weight: bold;
+  font-size: 28rpx;
 }
 
 .news .title navigator {
@@ -19,12 +13,25 @@
 }
 
 .news .item {
-	min-height: 326rpx;
-	max-height: 380rpx;
+  width: 100%;
 	display: flex;
-	flex-direction: column;
 	background-color: #fff;
-	overflow: hidden;
+  overflow: hidden;
+  border-bottom: solid 2rpx #f1f1f1;
+  padding: 0 30rpx;
+}
+.item_text{
+  padding: 20rpx 0;
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.item .item_img{
+  flex: none;
+  width: 200rpx;
+  display: flex;
+  align-items: center;
 }
 
 .news .cover {
@@ -32,28 +39,40 @@
 }
 
 .news .item image {
-	height: 250rpx !important;
+	height: 120rpx !important;
 	width: 100%;
 }
 
+.news .item .title {
+  font-size: 32rpx;
+  font-weight: bold;
+}
 .news .item .desc {
-	padding: 20rpx;
+	padding: 20rpx 0;
 	overflow: hidden;
 	max-height: 90rpx;
-	font-size: 26rpx;
+  font-size: 24rpx;
+  color: #999;
 }
 
 .news .list {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-gap: 20rpx;
+  display: block;
 }
-
-.news .list .item {
-	max-height: 280rpx !important;
-	min-height: 260rpx !important;
+.more{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 2;
+  font-size: 26rpx;
+  padding: 10rpx 0;
+  color: #999;
 }
-
-.news .list .item image {
-	height: 160rpx !important;
+.more::after{
+  content: "";
+  width: 8rpx;
+  height: 8rpx;
+  display: inline-block;
+  border: 2rpx solid;
+  transform: rotate(225deg);
+  border-color: transparent transparent #999 #999;
 }

@@ -11,6 +11,7 @@ const {
   getCityList,
 } = require("../../api/venue");
 const config = require("../../config/config");
+const { getSettingDetail, getHomePageRaces } = require("../../api/setting");
 // const QQMapWX = require("./../../utils/qqmap-wx-jssdk.min.js");
 // let qqmapsdk;
 
@@ -30,6 +31,27 @@ Page({
     currentCity: null,
     places: [],
     isChinese: i18n.i18n.getLang(),
+    setting: null,
+    races: []
+  },
+  async loadRaces() {
+    const races = await getHomePageRaces();
+    races.map((item) => {
+      item.cates = item.catesName ? item.catesName.join("/") : "/";
+      item.raceDate = dayjs(new Date(item.raceDate)).format("MM月DD日");
+      return item;
+    });
+    this.setData({ races });
+  },
+  async loadSetting(){
+    const setting = await getSettingDetail();
+    if(setting.videoUrl){
+      const reg = /https:\/\/v.qq.com\/x\/page\/(\w+).html/;
+      const matched = setting.videoUrl.match(reg);
+      const _vid = matched?.[1];
+      setting._vid = _vid;
+    }
+    this.setData({ setting });
   },
   loadFont() {
     const source = "https://xterra.club/fonts/Impact.ttf";
@@ -66,7 +88,6 @@ Page({
     });
   },
   tap(e) {
-    debugger;
     let { src, type, url, bannerid } = e.currentTarget.dataset;
     const { banners } = this.data;
     const urls = banners.map((item) => item.picUrl);
@@ -93,7 +114,6 @@ Page({
           });
           return;
         }
-        debugger;
         wx.navigateTo({
           url,
         });
@@ -133,19 +153,19 @@ Page({
       title: _t["加载中…"],
     });
     const banners = await getBannerList();
-    // const news = await getNewsIndexList();
-    // news.map(item => {
-    //   item.formatDate = dayjs(new Date(item.postTime)).format("MM月DD日");
-    //   return item;
-    // });
+    const news = await getNewsIndexList();
+    news.map(item => {
+      item.formatDate = dayjs(new Date(item.postTime)).format("YYYY-MM-DD");
+      return item;
+    });
 
-    const citys = await getCityList();
+   // const citys = await getCityList();
     this.setData(
       {
         loading: false,
         //races,
-        // news,
-        citys,
+        news,
+        //citys,
         banners,
       },
       () => {
@@ -298,7 +318,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: async function (options) {
-    await this.fetch();
+    await Promise.all([this.fetch(), this.loadSetting(), this.loadRaces()]);
     this.watchChanges("banner");
     // this.watchChanges('news');
     this.setData(
@@ -317,7 +337,7 @@ Page({
         _t: i18n.i18n.translate(),
       },
       () => {
-        this.getCity();
+       // this.getCity();
       }
     );
   },

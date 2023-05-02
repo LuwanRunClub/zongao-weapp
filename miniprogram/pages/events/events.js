@@ -48,12 +48,12 @@ Page({
       ],
       types: [
         { text: _t["活动类型"], value: "" },
-        { text: _t["铁人三项"], value: "铁人三项" },
+        { text: _t["路跑"], value: "路跑" },
         { text: _t["越野跑"], value: "越野跑" },
-        { text: _t["山地车"], value: "山地车" },
-        { text: "X-Plogging", value: "X-Plogging" },
-        { text: "X-Discovery", value: "X-Discovery" },
-        { text: _t["训练营"], value: "训练营" },
+        { text: _t["自行车"], value: "自行车" },
+        { text: "综合体能", value: "综合体能" },
+        // { text: "X-Discovery", value: "X-Discovery" },
+        // { text: _t["训练营"], value: "训练营" },
         { text: _t["其他"], value: "其他" },
       ],
     });

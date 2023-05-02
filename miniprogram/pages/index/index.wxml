@@ -3,14 +3,14 @@
     <image mode="heightFix" src="./../../images/tabs/logo-dark.png"></image>
   </view> -->
   <view class="swiper">  <!--style="margin-top:{{headerBarHeight}}px;"> -->
-    <swiper class="{{banners.length === 1 ? 'disabled' : ''}}" bindchange="swiperChange" indicator-dots="{{false}}" autoplay="{{true}}">
+    <swiper bindchange="swiperChange" indicator-dots="{{false}}" autoplay="{{true}}">
       <block wx:for="{{banners}}" wx:key="_id">
         <swiper-item>
           <view class="swiper-item">
             <van-image width="100%" height="100%" use-loading-slot lazy-load="{{true}}" src="{{item.picUrl}}" fit="cover">
               <van-loading slot="loading" type="spinner" size="20" vertical />
             </van-image>
-            <button bindtap="tap" data-bannerid="{{item._id}}" data-src="{{item.picUrl}}" data-url="{{item.redirectUrl}}" data-type="{{item.type}}" class="button">
+            <button bindtap="tap" data-bannerid="{{item._id}}" data-src="{{item.picUrl}}" data-url="{{item.redirectUrl}}" data-type="{{item.type}}" class="button" style="color:{{item.color}}; border-color:{{item.color}}">
               {{item.buttonText === 'register' ? _t['立即报名'] : _t['查看详情']}}
             </button>
           </view>
@@ -23,7 +23,7 @@
       </block>
     </view>
   </view>
-  <view class="city flex column align-center">
+  <!-- <view class="city flex column align-center">
     <image mode="widthFix" src="{{currentCity.coverUrl}}"></image>
     <text user-select="{{true}}" class="en {{ fontLoaded ? 'impact' : '' }}">
       {{currentCity.cityEn}}
@@ -39,6 +39,29 @@
   </view>
   <block wx:if="{{false && places.length}}">
     <venue-list list="{{places}}" />
-  </block>
-  <index-news news="{{news}}" />
+  </block> -->
+  <view class="section races">
+    <race-list list="{{races}}" showBtn="{{true}}" />
+  </view>
+  <view class="section video" wx:if="{{setting._vid}}">
+    <!-- <video id="myVideo" src="{{detail.videoUrl}}" binderror="videoErrorCallback" show-casting-button="{{true}}" show-center-play-btn='{{true}}' show-play-btn="{{true}}" controls autoplay bindplay="onPlayStart" bindended="onFinish" bindtimeupdate="onPlaying" bindloadedmetadata="onLoadVideoLoaded"></video> -->
+    <player-component preload="meta" bindplay="onVideoPlay" show-center-play-btn='{{true}}' bindloadedmetadata="onVideoLoaded" enablePlayGesture="{{true}}" enableProgressGesture="{{true}}"	id="tvp-id" controls playerId="tvp" vid="{{setting._vid}}" show-casting-button="{{true}}"	picture-in-picture-mode="{{['push', 'pop']}}" show-play-btn />
+  </view>
+  <view class="section icons">
+      <view class="hd">
+        <text>{{_t[type]}}{{_t['文章列表']}}</text>
+      </view>
+      <view class="bd">
+        <block wx:if="{{news.length}}">
+          <index-news news="{{news}}" />
+        </block>
+        <block wx:else>
+          <view class="empty">{{_t['暂无新闻']}}</view>
+        </block>
+      </view>
+      <view bindtap="loadMoreNews" class="ft flex align-center justify-center" wx:if="{{news.length && hasMoreData}}">
+        {{_t['查看更多']}}
+        <van-icon name="arrow-down" />
+      </view>
+    </view>
 </view>

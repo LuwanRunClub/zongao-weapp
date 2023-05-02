@@ -7,6 +7,10 @@ Component({
   properties: {
     list: {
       type: Array
+    },
+    showBtn: {
+      type: Boolean,
+      value: false
     }
   },
 

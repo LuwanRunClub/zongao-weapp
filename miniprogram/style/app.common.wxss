@@ -35,7 +35,7 @@
 }
 .section {
   background-color: #fff;
-  padding: 30rpx;
+  padding: 30rpx 0;
   margin-bottom: 18rpx;
 }
 .section:last-child {
