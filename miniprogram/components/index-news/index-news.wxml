@@ -17,7 +17,7 @@
       </view>
     </view>
   </view>
-  <navigator class="more" url="/pages/news/news">
+  <navigator class="more" open-type="switchTab" url="/pages/news/news">
     查看更多
   </navigator>
 </view>

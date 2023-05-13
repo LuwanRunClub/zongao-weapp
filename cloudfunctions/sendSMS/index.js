@@ -1,8 +1,9 @@
 const cloud = require('wx-server-sdk')
 const QcloudSms = require("qcloudsms_js")
-const appid = 1400462274 // 替换成您申请的云短信 AppID 以及 AppKey
-const appkey = "d5307b26bde380361253fc45765adfb5"
-const smsSign = "中奥赛事" // 替换成您所申请的签名
+const appid = 1400811686 // 1400462274 // 替换成您申请的云短信 AppID 以及 AppKey
+const appkey = "50c5558d0695f0fa1104779d6a817a0f" // "d5307b26bde380361253fc45765adfb5"
+const smsSign = "众奥赛事" // 替换成您所申请的签名
+
 
 cloud.init({
   // API 调用都保持和云函数当前所在环境一致

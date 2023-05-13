@@ -1,11 +1,13 @@
 const tencentcloud = require("tencentcloud-sdk-nodejs");
 
 const SesClient = tencentcloud.ses.v20201002.Client;
-
+/*
+SecretId: AKIDGNL9qaN1f4GF0dBhARVLyRlz9NctCKUZ
+SecretKey: ynaL9qSvFSXwBG9qfVKEEB990fTEqTvL*/
 const clientConfig = {
   credential: {
-    secretId: "AKID7ycASUdl7IQL3WqiSwAJCD7xsdApZa2s",
-    secretKey: "lJiuHk1XfZHjvtd7UFl35rU6YZWSCh18",
+    secretId: "AKIDGNL9qaN1f4GF0dBhARVLyRlz9NctCKUZ",
+    secretKey: "ynaL9qSvFSXwBG9qfVKEEB990fTEqTvL",
   },
   region: "ap-hongkong",
   profile: {

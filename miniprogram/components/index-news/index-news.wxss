@@ -44,7 +44,6 @@
 }
 
 .news .item .title {
-  font-size: 32rpx;
   font-weight: bold;
 }
 .news .item .desc {
@@ -64,7 +63,7 @@
   justify-content: center;
   line-height: 2;
   font-size: 26rpx;
-  padding: 10rpx 0;
+  padding: 20rpx 0;
   color: #999;
 }
 .more::after{

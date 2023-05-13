@@ -166,6 +166,12 @@
         "selectedIconPath": "images/tabs/events_active.png"
       },
       {
+        "pagePath": "pages/news/news",
+        "text": "新闻",
+        "iconPath": "images/tabs/news.png",
+        "selectedIconPath": "images/tabs/news_active.png"
+      },
+      {
         "pagePath": "pages/my/my",
         "text": "我的",
         "iconPath": "images/tabs/my.png",
@@ -178,7 +184,7 @@
   ],
   "plugins": {
     "player": {
-      "version": "2.1.15",
+      "version": "2.1.16",
       "provider": "wxa75efa648b60994b"
     }
   }

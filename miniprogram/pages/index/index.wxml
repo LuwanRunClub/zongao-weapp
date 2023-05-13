@@ -23,6 +23,10 @@
       </block>
     </view>
   </view>
+  <view class="section video" wx:if="{{setting._vid}}">
+    <!-- <video id="myVideo" src="{{detail.videoUrl}}" binderror="videoErrorCallback" show-casting-button="{{true}}" show-center-play-btn='{{true}}' show-play-btn="{{true}}" controls autoplay bindplay="onPlayStart" bindended="onFinish" bindtimeupdate="onPlaying" bindloadedmetadata="onLoadVideoLoaded"></video> -->
+    <player-component bindloadedmetadata="onVideoLoaded" objectFit="cover" preload="meta" bindplay="onVideoPlay" show-center-play-btn='{{true}}' enablePlayGesture="{{true}}" enableProgressGesture="{{true}}"	id="tvp-id" controls playerId="tvp" vid="{{setting._vid}}" show-casting-button="{{true}}"	picture-in-picture-mode="{{['push', 'pop']}}" show-play-btn />
+  </view>
   <!-- <view class="city flex column align-center">
     <image mode="widthFix" src="{{currentCity.coverUrl}}"></image>
     <text user-select="{{true}}" class="en {{ fontLoaded ? 'impact' : '' }}">
@@ -43,10 +47,6 @@
   <view class="section races">
     <race-list list="{{races}}" showBtn="{{true}}" />
   </view>
-  <view class="section video" wx:if="{{setting._vid}}">
-    <!-- <video id="myVideo" src="{{detail.videoUrl}}" binderror="videoErrorCallback" show-casting-button="{{true}}" show-center-play-btn='{{true}}' show-play-btn="{{true}}" controls autoplay bindplay="onPlayStart" bindended="onFinish" bindtimeupdate="onPlaying" bindloadedmetadata="onLoadVideoLoaded"></video> -->
-    <player-component preload="meta" bindplay="onVideoPlay" show-center-play-btn='{{true}}' bindloadedmetadata="onVideoLoaded" enablePlayGesture="{{true}}" enableProgressGesture="{{true}}"	id="tvp-id" controls playerId="tvp" vid="{{setting._vid}}" show-casting-button="{{true}}"	picture-in-picture-mode="{{['push', 'pop']}}" show-play-btn />
-  </view>
   <view class="section icons">
       <view class="hd">
         <text>{{_t[type]}}{{_t['文章列表']}}</text>
@@ -59,9 +59,9 @@
           <view class="empty">{{_t['暂无新闻']}}</view>
         </block>
       </view>
-      <view bindtap="loadMoreNews" class="ft flex align-center justify-center" wx:if="{{news.length && hasMoreData}}">
+      <!-- <view bindtap="gotoNews" data-url="/pages/news/news" class="ft flex align-center justify-center">
         {{_t['查看更多']}}
         <van-icon name="arrow-down" />
-      </view>
+      </view> -->
     </view>
 </view>

@@ -6,9 +6,9 @@ export const sendRegSMS = ({
   raceTitle,
   cateTitle
 }) => {
-  const templateId = 1058554; // 注册成功
+  const templateId = 1794847; // 注册成功
   const params = [trueName, raceTitle, cateTitle, trueName, raceTitle, cateTitle];
-  let content = `亲爱的{1}，恭喜您已成功报名{2}{3}。请关注XTERRA微信公众号和微信小程序，查看活动最新资讯和报名信息。 Dear {4}，Congratulations! You are now registered for the {5} {6}. Please follow XTERRA WeChat Official Account for most updated info.`;
+  let content = `亲爱的{1}，恭喜您已成功报名{2}{3}。请关注众奥赛事微信公众号和微信小程序，查看活动最新资讯和报名信息。 Dear {4}，Congratulations! You are now registered for the {5} {6}. Please follow 众奥赛事 WeChat Official Account for most updated info.`;
   params.forEach((param, index) => {
     content = content.replace(`{${index + 1}}`, param);
   });
@@ -50,9 +50,9 @@ export const sendRefundSMS = ({
   raceTitle,
   cateTitle
 }) => {
-  const templateId = 1058711; // 退款模板编号
+  const templateId = 1794848; // 退款模板编号
   const params = [raceTitle, cateTitle, trueName];
-  let content = `亲爱的{1}，您已成功取消报名{2}{3}，支付款将于24小时内退还到 原支付账户，如有任何问题，请及时与我们联系。请关注XTERRA微信公众号和微信小程序，查看活动最新资讯和报名信息。 Dear {4}, you have successfully cancelled your registration {5} {6}. The payment will be returned to the original payment account within 24 hours. If you have any questions, please contact us. Please follow XTERRA WeChat official account and WeChat mini program for the latest XTERRA information.`;
+  let content = `亲爱的{1}，您已成功取消报名{2}{3}，支付款将于24小时内退还到 原支付账户，如有任何问题，请及时与我们联系。请关注众奥赛事微信公众号和微信小程序，查看活动最新资讯和报名信息。 Dear {4}, you have successfully cancelled your registration {5} {6}. The payment will be returned to the original payment account within 24 hours. If you have any questions, please contact us. Please follow 众奥赛事 WeChat official account and WeChat mini program for the latest 众奥赛事 information.`;
   params.forEach((param, index) => {
     content = content.replace(`{${index + 1}}`, param);
   });

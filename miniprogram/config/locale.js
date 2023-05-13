@@ -2,12 +2,12 @@ const locale = [
   {
     lang: 'zh_CN',
     isChinese: true,
-    tabs: ['首页', '活动报名'/*, '社区'*/, '我的']
+    tabs: ['首页', '活动报名', '新闻', '我的']
   },  
   {
     lang: 'en_US',
     isChinese: false,
-    tabs: ['Home', 'Events', /*'Community',*/ 'My']
+    tabs: ['Home', 'Events', 'News', 'My']
   }
 ];
 

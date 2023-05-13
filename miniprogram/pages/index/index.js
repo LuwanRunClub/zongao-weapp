@@ -5,15 +5,7 @@ const dayjs = require("dayjs");
 const i18n = require("./../../utils/i18n");
 
 const _t = i18n.i18n.translate();
-const {
-  getCityDetailByName,
-  getPlaceList,
-  getCityList,
-} = require("../../api/venue");
-const config = require("../../config/config");
 const { getSettingDetail, getHomePageRaces } = require("../../api/setting");
-// const QQMapWX = require("./../../utils/qqmap-wx-jssdk.min.js");
-// let qqmapsdk;
 
 // miniprogram/pages/index/index.js
 Page({
@@ -34,6 +26,9 @@ Page({
     setting: null,
     races: []
   },
+  onVideoLoaded(){
+    console.log('onVideoLoaded')
+  },
   async loadRaces() {
     const races = await getHomePageRaces();
     races.map((item) => {
@@ -53,28 +48,22 @@ Page({
     }
     this.setData({ setting });
   },
-  loadFont() {
-    const source = "https://xterra.club/fonts/Impact.ttf";
-    const _this = this;
-    wx.loadFontFace({
-      global: true,
-      family: "font",
-      source,
-      success: (res) => {
-        console.log(res.status);
-        _this.setData({ fontLoaded: true });
-      },
-      fail: function (res) {
-        _this.setData({ fontLoaded: false });
-      },
-    });
-  },
   swiperChange(e) {
     this.setData({
       current: e.detail.current,
     });
   },
+  onVideoPlay(e){
+    console.log(e)
+  },
   mainSwiperChanged(e) {},
+  gotoNews(){
+    const { url } = e.currentTarget.dataset;
+    debugger;
+    wx.switchTab({
+      url,
+    })
+  },
   redirect(e) {
     const { url, wechaturl } = e.currentTarget.dataset;
     if (wechaturl) {
@@ -83,9 +72,16 @@ Page({
       });
       return;
     }
-    wx.navigateTo({
-      url,
-    });
+    debugger
+    try{
+      wx.navigateTo({
+        url,
+      });
+    }catch{
+      wx.switchTab({
+        url,
+      })
+    }
   },
   tap(e) {
     let { src, type, url, bannerid } = e.currentTarget.dataset;
@@ -119,34 +115,6 @@ Page({
         });
         break;
     }
-  },
-  async fetchCurrentCity(cityName) {
-    const city = await getCityDetailByName(cityName);
-    let currentCity = null;
-    if (city.length > 0) {
-      currentCity = city[0];
-    } else {
-      const { citys } = this.data;
-      currentCity = citys[0];
-    }
-    wx.setStorageSync(config.storageKey.currentCity, currentCity.cityCN);
-    this.setData(
-      {
-        currentCity,
-      },
-      async () => {
-        const { _id } = currentCity;
-        const places = await getPlaceList(_id);
-        places.map((item) => {
-          item._title = i18n.i18n.getLang() ? item.title : item.titleEn;
-          item._desc = i18n.i18n.getLang() ? item.desc : item.descEn;
-          return item;
-        });
-        this.setData({
-          places,
-        });
-      }
-    );
   },
   async fetch() {
     wx.showLoading({
@@ -191,129 +159,6 @@ Page({
       },
     });
   },
-
-  async getCity() {
-    let currentCity = wx.getStorageSync(config.storageKey.currentCity);
-    if (!currentCity) {
-      const { citys } = this.data;
-      if (citys?.length === 1) {
-        currentCity = citys[0].cityCN;
-      } else {
-        // this.locateCity();
-      }
-      wx.setStorageSync(config.storageKey.currentCity, currentCity);
-    } else {
-      this.fetchCurrentCity(currentCity);
-    }
-    app.globalData.currentCity = currentCity;
-  },
-
-  // locateCity() {
-  //   const that = this;
-  //   wx.getSetting({
-  //     success: (res) => {
-  //       console.log(JSON.stringify(res));
-  //       // res.authSetting['scope.userLocation'] == undefined    表示 初始化进入该页面
-  //       // res.authSetting['scope.userLocation'] == false    表示 非初始化进入该页面,且未授权
-  //       // res.authSetting['scope.userLocation'] == true    表示 地理位置授权
-  //       if (
-  //         res.authSetting["scope.userLocation"] != undefined &&
-  //         res.authSetting["scope.userLocation"] != true
-  //       ) {
-  //         wx.showModal({
-  //           title: "请求授权当前位置",
-  //           content: "需要获取您的地理位置，请确认授权",
-  //           success: function (res) {
-  //             if (res.cancel) {
-  //               wx.showToast({
-  //                 title: "拒绝授权",
-  //                 icon: "none",
-  //                 duration: 1000,
-  //               });
-  //             } else if (res.confirm) {
-  //               wx.openSetting({
-  //                 success: function (dataAu) {
-  //                   if (dataAu.authSetting["scope.userLocation"] == true) {
-  //                     wx.showToast({
-  //                       title: "授权成功",
-  //                       icon: "success",
-  //                       duration: 1000,
-  //                     });
-  //                     //再次授权，调用wx.getLocation的API
-  //                     wx.getLocation({
-  //                       type: "wgs84",
-  //                       success(res) {
-  //                         const { latitude, longitude } = res;
-  //                         that.decodeCity({
-  //                           latitude,
-  //                           longitude,
-  //                         });
-  //                       },
-  //                     });
-  //                   } else {
-  //                     wx.showToast({
-  //                       title: "授权失败",
-  //                       icon: "none",
-  //                       duration: 1000,
-  //                     });
-  //                   }
-  //                 },
-  //               });
-  //             }
-  //           },
-  //         });
-  //       } else if (res.authSetting["scope.userLocation"] == undefined) {
-  //         wx.getLocation({
-  //           type: "wgs84",
-  //           success(res) {
-  //             const { latitude, longitude } = res;
-  //             that.decodeCity({
-  //               latitude,
-  //               longitude,
-  //             });
-  //           },
-  //         });
-  //       } else {
-  //         wx.getLocation({
-  //           type: "wgs84",
-  //           success(res) {
-  //             const { latitude, longitude } = res;
-  //             that.decodeCity({
-  //               latitude,
-  //               longitude,
-  //             });
-  //           },
-  //         });
-  //       }
-  //     },
-  //   });
-  // },
-
-  // decodeCity({ latitude, longitude }) {
-  //   const that = this;
-  //   qqmapsdk = new QQMapWX({
-  //     key: config.mapKey,
-  //   });
-  //   qqmapsdk.reverseGeocoder({
-  //     sig: config.mapSig, // 必填
-  //     location: {
-  //       latitude,
-  //       longitude,
-  //     },
-  //     success(res) {
-  //       const locatedCity = res.result.ad_info.city.replace("市", "");
-  //       that.fetchCurrentCity(locatedCity);
-  //     },
-  //     fail(err) {
-  //       console.log(err);
-  //       wx.showToast("获取城市失败");
-  //     },
-  //     complete() {
-  //       // 做点什么
-  //     },
-  //   });
-  // },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -325,9 +170,6 @@ Page({
       {
         headerBarHeight: app.globalData.headerBarHeight,
       },
-      () => {
-        //this.loadFont();
-      }
     );
   },
   onShow() {
@@ -335,9 +177,6 @@ Page({
       {
         isChinese: i18n.i18n.getLang(),
         _t: i18n.i18n.translate(),
-      },
-      () => {
-       // this.getCity();
       }
     );
   },
