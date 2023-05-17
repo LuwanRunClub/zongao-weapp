@@ -1,6 +1,9 @@
 const i18n = require("./../../utils/i18n");
 // components/race-list/race-list.js
 Component({
+  options: {
+    addGlobalClass: true,
+  },
   /**
    * 组件的属性列表
    */

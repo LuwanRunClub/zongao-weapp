@@ -23,7 +23,10 @@ export const sendEmail = ({ html, from, to, subject }) => {
       data: { html, from, to, subject }
     }).then(res => {
       resolve(res.result.data);
-    }).catch(reject)
+    }).catch(err => {
+      console.error(err);
+      reject(err);
+    })
   })
 }
 
@@ -34,7 +37,10 @@ export const sendTencentEmail = ({ templateId, data, to, subject }) => {
       data: { templateId, data, to, subject }
     }).then(res => {
       resolve(res);
-    }).catch(reject)
+    }).catch(err => {
+      console.error(err);
+      reject(err);
+    })
   })
 }
 

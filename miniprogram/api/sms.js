@@ -7,8 +7,8 @@ export const sendRegSMS = ({
   cateTitle
 }) => {
   const templateId = 1794847; // 注册成功
-  const params = [trueName, raceTitle, cateTitle, trueName, raceTitle, cateTitle];
-  let content = `亲爱的{1}，恭喜您已成功报名{2}{3}。请关注众奥赛事微信公众号和微信小程序，查看活动最新资讯和报名信息。 Dear {4}，Congratulations! You are now registered for the {5} {6}. Please follow 众奥赛事 WeChat Official Account for most updated info.`;
+  const params = [trueName, raceTitle, cateTitle/*, trueName, raceTitle, cateTitle*/];
+  let content = `亲爱的{1}，恭喜您已成功报名{2}{3}组别。请关注众奥赛事微信公众号和微信小程序，查看比赛最新资讯和报名信息。`;
   params.forEach((param, index) => {
     content = content.replace(`{${index + 1}}`, param);
   });

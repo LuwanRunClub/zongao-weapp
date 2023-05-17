@@ -31,9 +31,9 @@ exports.main = async (event, context) => {
           "TemplateID": templateId || 12688,
           "TemplateData": JSON.stringify(data)
       },
-      "FromEmailAddress": "noreply@xterra.club",
+      "FromEmailAddress": "service@mail.zhongaosaishi.com",
       "Subject": subject,
-      "ReplyToAddresses": "noreply@xterra.club"
+      "ReplyToAddresses": "service@mail.zhongaosaishi.com"
   };
   client.SendEmail(params).then(
     (data) => {

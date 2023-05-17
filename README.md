@@ -272,3 +272,12 @@ pages/url/url.html?url=pages/events/events.html?type%3DX-Disovery
 主账号ID 100009215962 
 用户名 walkingp 
 登录密码 Za123456@
+
+
+众奥体育
+支付商户号：1526041401
+密钥：zhongaotiyuzhongaotiyuzhongaotiy
+
+锋云体育
+支付商户号：1607293955
+密钥：fengyuntiyufengyuntiyufengyuntiy

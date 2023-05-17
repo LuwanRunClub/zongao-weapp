@@ -3,6 +3,9 @@
   padding: 0;
   height: 100vh;
 }
+.section {
+  padding: 30rpx;
+}
 .top{
   overflow: auto;
 }

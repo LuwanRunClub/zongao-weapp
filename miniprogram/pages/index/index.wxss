@@ -59,10 +59,12 @@
   font-weight: bold;
 }
 .list .cover+.flex .align-center{
-  align-self: flex-start;
+  align-self: flex-end;
 }
 .list button{
   padding: 0 8rpx;
+  height: 50rpx;
+  font-size: 20rpx;
 }
 
 .swiper button.button {
