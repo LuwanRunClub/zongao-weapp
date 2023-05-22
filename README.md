@@ -269,6 +269,10 @@ pages/url/url.html?url=pages/events/events.html?type%3DX-Plogging
 2. 跳转X-Disovery
 pages/url/url.html?url=pages/events/events.html?type%3DX-Disovery
 
+小程序后台
+小程序登录账号:xiaoqingwa@zhongaosports.com
+密码Za123456
+
 主账号ID 100009215962 
 用户名 walkingp 
 登录密码 Za123456@

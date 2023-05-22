@@ -23,7 +23,7 @@ const config = {
   messageTemplates: {
     registration: {
       title: '赛事活动报名通知',
-      templateId: 'FGiibaRONUAlefM3TA4s-enx4skhLNmFM-MY6yuEKLI',
+      templateId: '_vztpYRCQvQIZn99wA_uXmHkR6iev-XeR6FVCu6WMVc',
       templateNo: 2150,
       fields: [
         {
@@ -50,7 +50,7 @@ const config = {
     },
     cancel: {
       title: '赛事活动取消通知',
-      templateId: 'URnfH_zgJQjLNp2ocUIwGOVRoY7cppOfRh9PisXxdQE',
+      templateId: 'MhL_yke-_38-eZ5daRHXHilRP19gwXdJBzzQjw3x5Uw',
       templateNo: 13999,
       fields: [
         {
