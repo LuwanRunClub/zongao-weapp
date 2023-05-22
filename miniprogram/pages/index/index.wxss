@@ -52,14 +52,11 @@
   justify-content: center;
   border-bottom: solid 2rpx #eee;
   padding: 20rpx 0;
+  margin-bottom: 20rpx;
 }
-
 .section .hd text{  
   font-size: 32rpx;
   font-weight: bold;
-}
-.list .cover+.flex .align-center{
-  align-self: flex-end;
 }
 .list button{
   padding: 0 8rpx;
@@ -70,7 +67,7 @@
 .swiper button.button {
   position: absolute;
   left: 50%;
-  bottom: 100rpx;
+  bottom: 30rpx;
   transform: translateX(-50%);
   background-color: transparent;
   border: solid 4rpx #fff;
