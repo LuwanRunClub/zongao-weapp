@@ -25,7 +25,7 @@
   </view>
   <view class="section video" wx:if="{{setting._vid}}">
     <!-- <video id="myVideo" src="{{detail.videoUrl}}" binderror="videoErrorCallback" show-casting-button="{{true}}" show-center-play-btn='{{true}}' show-play-btn="{{true}}" controls autoplay bindplay="onPlayStart" bindended="onFinish" bindtimeupdate="onPlaying" bindloadedmetadata="onLoadVideoLoaded"></video> -->
-    <player-component bindloadedmetadata="onVideoLoaded" objectFit="cover" preload="meta" bindplay="onVideoPlay" show-center-play-btn='{{true}}' enablePlayGesture="{{true}}" enableProgressGesture="{{true}}"	id="tvp-id" controls playerId="tvp" vid="{{setting._vid}}" show-casting-button="{{true}}"	picture-in-picture-mode="{{['push', 'pop']}}" show-play-btn />
+    <player-component bindloadedmetadata="onVideoLoaded" objectFit="cover" preload="meta" bindplay="onVideoPlay" show-center-play-btn='{{true}}' enablePlayGesture="{{true}}" enableProgressGesture="{{true}}"	id="tvp-id" controls playerId="tvp" loop vid="{{setting._vid}}" show-casting-button="{{true}}"	picture-in-picture-mode="{{['push', 'pop']}}" show-play-btn />
   </view>
   <!-- <view class="city flex column align-center">
     <image mode="widthFix" src="{{currentCity.coverUrl}}"></image>

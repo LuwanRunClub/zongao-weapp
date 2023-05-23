@@ -2,11 +2,15 @@
 @import "./../../style/app.common.wxss";
 .cover {
   width: 225rpx;
-  padding-right: 30rpx;
+  padding-right: 20rpx;
 }
 .item{
   border-bottom: solid 1rpx #f1f1f1;
   padding: 24rpx 0;
+}
+.cover__img {
+  display: flex;
+  align-items: center;
 }
 .item:first-child{
   padding-top: 0;
