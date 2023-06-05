@@ -25,7 +25,4 @@
     <van-cell title="紧急联系人" value="{{detail.contactUser}}" bindtap="copy" value-class="copyable" data-text="{{detail.contactUser}}" border="{{ false }}" />
     <van-cell title="紧急联系人手机号" value="{{detail.contactUserPhone}}" bindtap="copy" value-class="copyable" data-text="{{detail.contactUserPhone}}" border="{{ false }}" />
   </van-cell-group>
-  <van-cell-group title="相关信息">
-    <van-cell title="是否参加过X-Plogging" value="{{detail.plogging}}" border="{{ false }}" />
-  </van-cell-group>
 </view>

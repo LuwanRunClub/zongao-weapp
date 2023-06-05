@@ -416,6 +416,20 @@
           "query": "id=28ee4e3e60ab62751bf8e2aa333f1e5c",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "吴中号码布",
+          "pathName": "pages/events/cert/cert",
+          "query": "raceId=2cc84e26640546ff030f09527105ed4f&cateId=null&id=2907462f646f69d20000f8831da75700&isbib=true",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "报名查询",
+          "pathName": "pages/events/query/query",
+          "query": "raceId=2cc84e26640546ff030f09527105ed4f&type=registration",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

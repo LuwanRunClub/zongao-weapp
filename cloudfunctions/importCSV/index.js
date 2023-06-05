@@ -74,12 +74,16 @@ async function insertSingle(raceId, row, mode){
   const postCode = '';
   const contactUser = row[18];
   const contactUserPhone = row[19];
+  const bibNum = row[20];
   const bloodType = row[14];
   const tSize = row[15];
   const club = row[13];
   const pinyinLast = row[3];
   const pinyinFirst = row[4]
   const res = await cateTable.where({ raceId, title: cateTitle }).get();
+  if(!cardNo){
+    return;
+  }
   if(res.data.length > 0){    
     const cate = res.data[0];
     const cateId = cate._id;
@@ -111,7 +115,8 @@ async function insertSingle(raceId, row, mode){
       status: 1, statusText: '已支付',
       tSize, trueName,
       postCode,
-      age
+      age,
+      bibNum
     };
 
     try{
@@ -131,7 +136,7 @@ async function insertSingle(raceId, row, mode){
 
 async function insertRegistration(param){
   // out_trade_no, paidFee, price, totalFee, userId, userInfo, userName
-  const { racePic, addr, birthDate, bloodType, cardNo, cardType, contactUser, contactUserPhone, email, gender, phoneNum, region, tSize, trueName, cateId, cateTitle, groupType, groupText, orderNum, orderType, raceTitle, status, statusText } = param;
+  const { racePic, addr, birthDate, bloodType, cardNo, cardType, contactUser, contactUserPhone, email, gender, phoneNum, region, tSize, trueName, cateId, cateTitle, groupType, groupText, orderNum, orderType, raceTitle, status, statusText, bibNum } = param;
   const existed = await regTable.where({ orderNum }).get();
   if(existed.data.length === 0){
     const profiles = [{ racePic, addr, birthDate, bloodType, cardNo, cardType, contactUser, contactUserPhone, email, gender, phoneNum, region, tSize, trueName }];
@@ -140,7 +145,7 @@ async function insertRegistration(param){
       profileCount: 1,
       profiles,
       racePic,
-      cateId, cateTitle, groupType, groupText, orderNum, orderType, raceTitle, status, statusText
+      cateId, cateTitle, groupType, groupText, orderNum, orderType, raceTitle, status, statusText, bibNum
     };
     await regTable.add({
       data

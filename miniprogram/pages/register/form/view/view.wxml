@@ -27,9 +27,9 @@
     </view>
   </van-cell>
   </van-cell-group>  
-  <van-cell-group title="{{_t['相关信息']}}" wx:if="{{profile.isPlogginged}}">
+  <!-- <van-cell-group title="{{_t['相关信息']}}" wx:if="{{profile.isPlogginged}}">
     <van-cell title="{{_t['是否参加过X-Plogging']}}" border="{{ false }}" value="{{profile.isPlogginged}}" />
-  </van-cell-group>
+  </van-cell-group> -->
   <van-cell-group>
     <van-cell><button type="primary" class="button" bindtap="backTo">{{_t['返回']}}</button></van-cell>
   </van-cell-group>
