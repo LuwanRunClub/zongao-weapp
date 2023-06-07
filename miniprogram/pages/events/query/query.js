@@ -287,14 +287,14 @@ Page({
   },
   viewCert(e) {
     const {
-      type = 'cert'
+      type = 'cert', cateid: cateId
     } = e.currentTarget.dataset;
     const {
-      raceDetail, cateId, searchResult, searchedReg
+      raceId, searchResult, searchedReg
     } = this.data;
     const id = type === 'cert' ? searchResult._id : searchedReg._id;
     wx.navigateTo({
-      url: `/pages/events/cert/cert?raceId=${raceDetail._id}&cateId=${cateId}&id=${id}&isbib=${type === "bib"}`,
+      url: `/pages/events/cert/cert?raceId=${raceId}&cateId=${cateId}&id=${id}&isbib=${type === "bib"}`,
     })
   },
   /**

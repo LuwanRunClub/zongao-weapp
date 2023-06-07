@@ -59,7 +59,6 @@ Page({
   mainSwiperChanged(e) {},
   gotoNews(){
     const { url } = e.currentTarget.dataset;
-    debugger;
     wx.switchTab({
       url,
     })
@@ -72,7 +71,6 @@ Page({
       });
       return;
     }
-    debugger
     try{
       wx.navigateTo({
         url,

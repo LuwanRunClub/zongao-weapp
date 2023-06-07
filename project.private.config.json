@@ -430,6 +430,20 @@
           "query": "raceId=2cc84e26640546ff030f09527105ed4f&type=registration",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "检录比赛",
+          "pathName": "pages/my/idcard/idcard",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "查询",
+          "pathName": "pages/events/query/query",
+          "query": "raceId=2cc84e26640546ff030f09527105ed4f&type=registration",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
