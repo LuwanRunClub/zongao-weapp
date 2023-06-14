@@ -250,7 +250,8 @@
         {
           "name": "导入比赛成绩",
           "pathName": "pages/admin/events/result/result",
-          "query": "raceId=b00064a76049d98b0979e9d24bbda1d9",
+          "query": "raceId=2cc84e26640546ff030f09527105ed4f",
+          "launchMode": "default",
           "scene": null
         },
         {
@@ -442,6 +443,20 @@
           "name": "查询",
           "pathName": "pages/events/query/query",
           "query": "raceId=2cc84e26640546ff030f09527105ed4f&type=registration",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "查询吴中成绩",
+          "pathName": "pages/events/query/query",
+          "query": "raceId=2cc84e26640546ff030f09527105ed4f&type=result",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "吴中完赛证书",
+          "pathName": "pages/events/cert/cert",
+          "query": "raceId=2cc84e26640546ff030f09527105ed4f&cateId=undefined&id=3f1941116489b90201ee642545a5295f&isbib=false",
           "launchMode": "default",
           "scene": null
         }
